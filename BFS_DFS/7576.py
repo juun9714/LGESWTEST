@@ -20,13 +20,13 @@ def BFS():
             ny=y+dy[i]
             if 0<=nx<N and 0<=ny<M and box[nx][ny]==0:
                 queue.append([nx, ny])
-                box[nx][ny]=box[x][y]+1
+                box[nx][ny]=box[x][y]+1 # 이전 값에 +1을 해야 소요된 시간 및 여러 군에 익은 토마토가 있었을 경우, 동시에 익는 것을 반영 할 수 있음
 
 
 for n in range(N):
     for m in range(M):
         if box[n][m]==1:
-            queue.append([n, m])
+            queue.append([n, m]) # 익은 토마토를 한번에 queue에 넣기
 
 BFS()
 
